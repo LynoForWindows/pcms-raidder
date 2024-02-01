@@ -1,4 +1,4 @@
-**if you scared that you got logged then do `git clone github.com/LynoForWindows/pcms-raidder/tree/main` and `cd pcms-raidder` do `python main.py` ( execute these commands on cmd [ MAKE SURE HAVE GIT DOWNLOADED] )**
+**if you scared that you got logged then do `git clone https://github.com/LynoForWindows/pcms-raidder/` and `cd pcms-raidder` do `python main.py` ( execute these commands on cmd [ MAKE SURE HAVE GIT DOWNLOADED] )**
 # PCMS Raidder 
 pcms funny bot n'ker ( free ) made by lyno 100% , unskidded ( easy + deobf src)
 ( with funny name lmfao )
