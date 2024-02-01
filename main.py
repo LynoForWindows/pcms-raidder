@@ -79,10 +79,10 @@ async def on_ready():
 # NUKE COMMAND BY LYNO ( trash)
 @bot.command()
 async def nuke(ctx):
+    os.system('cls')
     icon()
     Write.Print(f'\nLogged in as {bot.user.name} ({bot.user.id})',Colors.red_to_blue,interval=0.0000)
     Write.Print(f"\n Commands : \n {prefix}nuke",Colors.red_to_blue,interval=0.0000)
-    os.system('cls')
     await ctx.message.delete()
     guild = ctx.guild
     channels = guild.channels
