@@ -27,10 +27,14 @@ make sure run cmd at correct path
 
 
 - For Windows 10 Users to run the file
-```python main.py```
+``
+python main.py
+``
 
 - For Win11 users :
-```python3 main.py```
+``
+python3 main.py
+``
 
 Premium Features Soon :
 Faster ( like mine )
